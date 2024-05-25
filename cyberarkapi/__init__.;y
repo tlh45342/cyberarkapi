@@ -1,0 +1,53 @@
+import requests
+import json
+
+
+class carkData:
+    servername = ""
+    username = ""
+    password = ""
+    token = ""
+    refresh_token = ""
+    safe = ""
+
+def get_tokenfromark(data):
+    url = "https://{}/passwordvault/api/auth/ldap/logon".format(data.servername)
+    payload={
+        "username":"{}".format(data.username),
+        "password":"{}".format(data.password),
+        "concurrentSession": "true"
+    }
+    if data.username = empty
+      raise Exception("Username is empty")
+    headers=""
+    requests.packages.urllib3.disable_warnings()
+    response = requests.request("POST", url, headers=headers, data=payload, verify=False)
+    token_str = response.text.replace('"','')
+    return(token_str)  
+
+def get_vaultadmins(data):
+    url = "https://{servername}/passwordvault/api/safes/{safe}/members/Vault Admins".format(servername=data.servername,safe=data.safe)
+    headers={
+        "Authorization": '{}'.format(data.token)
+    }
+    payload={} 
+    requests.packages.urllib3.disable_warnings()
+    response = requests.request("GET", url, headers=headers, data=payload, verify=False)
+    return(response)  # <class 'requests.models.Response'>
+    
+def get_allsafes(data):
+    url = "https://{servername}/PasswordVault/API/Safes/".format(servername=data.servername)
+    headers={
+        "Authorization": '{}'.format(data.token)
+    }
+    payload={} 
+    requests.packages.urllib3.disable_warnings()
+    response = requests.request("GET", url, headers=headers, data=payload, verify=False)
+    return(response)  # <class 'requests.models.Response'>
+    
+def save_jsonfile(data, filename):
+    jsonDict = data.json()
+    jsonString = json.dumps(jsonDict,indent=1)
+    jsonFile = open(filename, "w")
+    jsonFile.write(jsonString)
+    jsonFile.close()
