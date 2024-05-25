@@ -16,9 +16,9 @@ If using Windows the windows does depend on a a development environment support
 
 The "Package" or wheel can be made using "make"
 
-make clean
-make
-make install
+make clean\
+make\
+make install\
 
 please examine the requirements.txt
 
