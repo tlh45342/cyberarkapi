@@ -40,4 +40,7 @@ please examine the requirements.txt
 
 ## TESTING
 
-The tests directory has a number a few tests.
+The tests directory has a number a few tests.  The testing modules uses dotenv from python-dotenv.
+There are a number of way to manage secrets in advance.  One needs to choose something that works for you.
+For testing in this case I choose to stick with dotenv and pull items from the ".env" file.  I am just as likely however, 
+to use "keyring", "hvac", or "pykeepass"
