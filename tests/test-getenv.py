@@ -7,6 +7,7 @@ def main():
     print("Username:", os.getenv('USERNAME'))
     print("Password:", os.getenv('PASSWORD'))
     print("Servername:", os.getenv('SERVERNAME'))
+    print("Safe:", s.getenv('SAFE'))
 
 # --------------------    
 
