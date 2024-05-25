@@ -15,12 +15,19 @@ pip install -r requests.txt
 
 ## Makefile Commentary
 
+# windows environment
 If using Windows the windows does depend on a a development environment support
-
  I work with the gnuwin32.sourceforge.net variety.  One would expect the MSYS2 distribution would work fine as well.
  * make
  * rm
- 
+
+# Linux, etc
+  I expect you will want build essentials
+
+```bash
+apt-get install build-essential
+```
+  
 ## Producing the Package of the module
 
 The "Package" or wheel can be made using "make"
