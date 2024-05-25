@@ -28,7 +28,7 @@ If using Windows the windows does depend on a a development environment support
 apt-get install build-essential
 ```
   
-## Producing the Package of the module
+## Producing the package for the module
 
 The "Package" or wheel can be made using "make"
 
